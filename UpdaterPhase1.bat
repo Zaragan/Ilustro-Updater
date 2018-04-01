@@ -1,6 +1,6 @@
-@echo off
+@echo on
 cscript "Updater.vbs"
-powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser"
+powershell.exe -Command "Set-ExecutionPolicy ByPass -Scope CurrentUser"
 powershell.exe -File "Updater.ps1"
-start ..\Ilustro-Updater\UpdaterPhase2.bat
-exit
+powershell.exe -Command "Set-ExecutionPolicy Restricted -Scope CurrentUser"
+start ..\Ilustro-Updater-Master\UpdaterPhase2.bat
